@@ -8,6 +8,16 @@
 % Package for setting background image
 \usepackage{background}
 
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
 \RequirePackage{lib/sections}
 
 % Set path for images files
@@ -45,6 +55,9 @@
 
 \lipsum
 
+% TODO: Best way to do this is with hyperref
+I love the Hommlets \ref{hommlet-village}
+
 \chapter{The Voloman Empire}
 
 asdf
@@ -62,5 +75,26 @@ It works :)
 	{S, M (ink and parchment, which the spell consumes)}
 	{Until dispelled}
 You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+
+\subsection{Subsection}
+Subsections further break down the information for the reader.
+
+\RPGArea{Village of Hommlet} \label{hommlet-village}
+This is the village of hommlet.
+
+\RPGSubArea{Inn of the Welcome Wench}
+Inside the village is the inn of the Welcome Wench.
+
+\RPGSubArea{Blacksmith's Forge}
+There's a blacksmith in town, too.
+
+\RPGArea{Foo's Castle}
+This is foo's home, a hovel of mud and sticks.
+
+\RPGSubArea{Moat}
+This ditch has a board spanning it.
+
+\RPGSubArea{Entrance}
+A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
 
 \end{document}

@@ -180,3 +180,48 @@
 		\item [ \spellduration      : ] #6
 	\end{description}
 }
+
+% ---------------------------- %
+% Map sections and subsections %
+% ---------------------------- %
+
+% Create counter to keep track of how many area sections and subsections are made
+\newcounter{RPGAreaCounter}
+
+% Create counter for subareas linked to the main area counter
+\newcounter{RPGSubAreaCounter}[RPGAreaCounter]
+
+% Command to reset counter
+\NewDocumentCommand{\RPGResetAreas}{}
+{
+	\setcounter{RPGAreaCounter}{0}
+}
+
+% Commands for getting area and sub area names
+% These are already defined so we overwrite them
+\renewcommand \theRPGAreaCounter{\arabic{RPGAreaCounter}}
+\renewcommand \theRPGSubAreaCounter{\alph{RPGSubAreaCounter}}
+
+% New area header
+% #1 is name of area
+\NewDocumentCommand{\RPGArea}{ m }
+{
+	\refstepcounter{RPGAreaCounter}
+	\subsection{\theRPGAreaCounter . ~ #1}
+}
+
+% New subarea header
+% #1 is sub area name
+\NewDocumentCommand{\RPGSubArea}{ m }
+{
+	\refstepcounter{RPGSubAreaCounter}
+	\subsubsection{\theRPGAreaCounter \theRPGSubAreaCounter . ~ #1}
+}
+
+% These are commands to make references to the areas
+% #1
+% #2
+\NewDocumentCommand{\RPGAreaRef}{ o m }
+{
+	
+}
