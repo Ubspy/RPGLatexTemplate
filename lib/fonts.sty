@@ -1,0 +1,53 @@
+% Load the font encoder package, required to render custom fonts
+\RequirePackage[T1]{fontenc}
+
+% Load colors
+\RequirePackage{lib/colors}
+
+% God damn getting fonts to work was annoying as FUCK
+% The way you want to get fonts working is run the 'autoinst' command for each font in the fonts folder
+% Then that will install them to your local texmf tree, you then need to run 'texhash' and 'updmap' for tex to recognize them
+% Lastly you need to import the pdf map files for each font, just look at what they're called under 'fonts/map' directory
+% The name of the font family will be defined in the .fd files in the 'tex/latex/map' directory
+
+% If there's multiple files that are supposed to be together, use 'autoinst BookInsanity-*'
+% I had a problem with some of the font metadata so I had to fix it for BookInsanity
+
+% Specify pdfmapfiles for each imported font
+\pdfmapfile{MrEavesSCRemake.map} % MrEavesSCRemake-TLF
+\pdfmapfile{BookInsanity.map} % Book Insanity
+
+% Set the default font
+\renewcommand{\familydefault}{BookInsanity-TLF}
+
+% Make commands for each font
+% First set of brackets is for the parameters, of which there are none
+\NewDocumentCommand{\RPGFontChapter}{}{
+    \color{titletext}
+    \Huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontSection}{}{
+    \color{titletext}
+    \huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontSubsection}{}{
+    \color{titletext}
+    \Large\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontSubsubsection}{}{
+    \color{titletext}
+    \large\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontParagraph}{}{
+    \color{black}
+    \normalsize\fontfamily{BookInsanity-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontSubparagraph}{}{
+    \color{black}
+    \small\fontfamily{BookInsanity-TLF}\selectfont
+}

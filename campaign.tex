@@ -1,0 +1,66 @@
+% Template document for tabletop rpg games
+
+% Use the memoir package, it's basically an extended version of the book class
+\documentclass{memoir}
+
+\usepackage{lipsum}
+
+% Package for setting background image
+\usepackage{background}
+
+\RequirePackage{lib/sections}
+
+% Set path for images files
+\graphicspath{{./images/}}
+ 
+% Sets default background image
+\backgroundsetup{
+    scale=1,
+    color=black,
+    opacity=1,
+    angle=0,
+    contents={
+        \includegraphics[width=\paperwidth, height=\paperheight]{images/PHB-background.png}
+    }
+}
+% Use \NoBgThispage to skip background on current page
+% User \BgThisPage to resume
+
+% I can't for the life of me get these commands to show up for intellisense, redefining them allows that to happen
+% \newcommand{\NoBgThispage}{\NoBgThispage}
+% \newcommand{\BgThisPage}{\BgThisPage}
+
+% TODO: Title page
+\title{Simple Sample} % Sets article title
+\author{My Name} % Sets authors name
+\date{\today} % Sets date for date compiled
+
+% Start of document
+\begin{document}
+
+% Create a table of contents
+\tableofcontents
+
+\chapter{Highness Heist}
+
+\lipsum
+
+\chapter{The Voloman Empire}
+
+asdf
+
+\subsection{Penis}
+\lipsum
+
+\chapter{Test}
+It works :)
+\RPGSpellHeader
+  {Beautiful Typesetting}
+  {4th-level illusion}
+  {1 action}
+  {5 feet}
+  {S, M (ink and parchment, which the spell consumes)}
+  {Until dispelled}
+You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+
+\end{document}
