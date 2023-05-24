@@ -36,89 +36,89 @@
 
 % Chapter formatting
 \titleformat{\chapter}
-    { \RPGFontChapter }
-    { \chaptertitlename\ \thechapter : }
-    { \wordsep }
-    % TODO: I've tried to make it so there's an indent
-    % only after chapter but I'm totally stuck
-    {  } 
+	{ \RPGFontChapter }
+	{ \chaptertitlename\ \thechapter : }
+	{ \wordsep }
+	% TODO: I've tried to make it so there's an indent
+	% only after chapter but I'm totally stuck
+	{  } 
 
 % Spacing took from homebrewery
 \titlespacing*{\chapter}
-  { 0pt }  % left
-  { .3ex }  % before-sep
-  { 2.8ex } % after-sep
+	{ 0pt }  % left
+	{ .3ex }  % before-sep
+	{ 2.8ex } % after-sep
 
 
 % Section formatting
 \titleformat{\section}
-    { \RPGFontSection }
-    { \thesection\ }
-    { 1em }
-    { \nopagebreak }
+	{ \RPGFontSection }
+	{ \thesection\ }
+	{ 1em }
+	{ \nopagebreak }
 
 \titlespacing*{ \section }
-    { 0pt }
-    { 1.3ex plus .43ex }
-    { 0pt }
+	{ 0pt }
+	{ 1.3ex plus .43ex }
+	{ 0pt }
 
 
 % Subsection formatting
 \titleformat{\subsection}
-    { \RPGFontSubsection }
-    { \thesubsection }
-    { 1em }
-    { \nopagebreak }
-    [
-        % Make a page break with the custom color we defined but higher up than normal
-        \vspace{ -.3ex}
-        \titleline{\color{breakgold} \titlerule[1pt]}
-    ]
+	{ \RPGFontSubsection }
+	{ \thesubsection }
+	{ 1em }
+	{ \nopagebreak }
+	[
+		% Make a page break with the custom color we defined but higher up than normal
+		\vspace{ -.3ex}
+		\titleline{\color{breakgold} \titlerule[1pt]}
+	]
 
 \titlespacing*{\subsection}
-    { 0pt }
-    { 1.4ex plus 0.47ex }
-    { 1.2ex }
+	{ 0pt }
+	{ 1.4ex plus 0.47ex }
+	{ 1.2ex }
 
 % Subsubsection formatting
 \titleformat{\subsubsection}
-  { \RPGFontSubsubsection }
-  { \thesubsubsection }
-  { 1em }
-  { \nopagebreak }
+	{ \RPGFontSubsubsection }
+	{ \thesubsubsection }
+	{ 1em }
+	{ \nopagebreak }
 
 \titlespacing*{\subsubsection}
-  { 0pt }
-  { 2ex plus .67ex }
-  { .2ex }
+	{ 0pt }
+	{ 2ex plus .67ex }
+	{ .2ex }
 
 
 % Paragraph formatting
 \titleformat{\paragraph}[runin]
-  { \RPGFontParagraph }
-  { \theparagraph \quad }
-  { 0pt }
-  {  }
-  [ . ]
+	{ \RPGFontParagraph }
+	{ \theparagraph \quad }
+	{ 0pt }
+	{  }
+	[ . ]
 
 \titlespacing*{\paragraph}
-  { 0pt }
-  { \parskip }
-  { \wordsep }
+	{ 0pt }
+	{ \parskip }
+	{ \wordsep }
 
 
 % Subparagraph formatting (same as paragraph)
 \titleformat{\subparagraph}[runin]
-  { \RPGFontSubparagraph }
-  { \thesubparagraph \quad }
-  { 0pt }
-  {  }
-  [ . ]
+	{ \RPGFontSubparagraph }
+	{ \thesubparagraph \quad }
+	{ 0pt }
+	{  }
+	[ . ]
 
 \titlespacing*{\subparagraph}
-  { 0pt }
-  { \parskip }
-  { \wordsep }
+	{ 0pt }
+	{ \parskip }
+	{ \wordsep }
 
 
 % ----------------------------------------------------------------- %
@@ -130,28 +130,28 @@
 % and the second one is optional (o)
 % #1 is the feat title
 % #2 is a short description (ex. a feat presequisite)
-\NewDocumentCommand{\RPGFeatHeader} { m o }
+\NewDocumentCommand{\RPGFeatHeader}{ m o }
 {
-    % Make a subsection with the title given in the command
-    \subsection {#1}
+	% Make a subsection with the title given in the command
+	\subsection {#1}
 
-    % If a second argument is given then make it italic, then make a new paragraph with no indent
-    \IfValueT{#2}
-        {
-        \textit {#2}
-        \par \vspace{3pt} \noindent \ignorespaces
-        }
+	% If a second argument is given then make it italic, then make a new paragraph with no indent
+	\IfValueT{#2}
+	{
+		\textit {#2}
+		\par \vspace{3pt} \noindent \ignorespaces
+	}
 }
 
 % This commands is for an item
 % #1: Item name
 % #2: Item description (ex: Monster item, legendary )
-\NewDocumentCommand{\RPGItemHeader} { m m }
+\NewDocumentCommand{\RPGItemHeader}{ m m }
 {
-    % Same deal as the last one but this guy needs a description
-    \subsubsection {#1}
-    \textit {#2}
-    \par \vspace{3pt} \noindent \ignorespaces
+	% Same deal as the last one but this guy needs a description
+	\subsubsection {#1}
+	\textit {#2}
+	\par \vspace{3pt} \noindent \ignorespaces
 }
 
 % This is for a custom spell
@@ -161,22 +161,22 @@
 % #4 is the casting range
 % #5 are the spell components
 % #6 is the duration of the spell
-\NewDocumentCommand{\RPGSpellHeader} { m m m m m m }
+\NewDocumentCommand{\RPGSpellHeader}{ m m m m m m }
 {
-    % Reuse the item header since it's exactly what we need
-    \RPGItemHeader {#1} {#2}
+	% Reuse the item header since it's exactly what we need
+	\RPGItemHeader {#1} {#2}
 
-    % Begin a description environment
-    % This essentially allows you to make a list with item names and values
-    \begin{description}
-        [
-        nosep, % Removes separation 
-        labelsep = 2pt, % Adds extra space between item title and description
-        after = { \vspace{4pt plus 1pt minus 1pt} }, % Adds spacing after entire description block
-        ]
-        \item [ \spellcasttime      : ] #3
-        \item [ \spellrange         : ] #4
-        \item [ \spellcomponents    : ] #5
-        \item [ \spellduration      : ] #6
-    \end{description}
+	% Begin a description environment
+	% This essentially allows you to make a list with item names and values
+	\begin{description}
+		[
+		nosep, % Removes separation 
+		labelsep = 2pt, % Adds extra space between item title and description
+		after = { \vspace{4pt plus 1pt minus 1pt} }, % Adds spacing after entire description block
+		]
+		\item [ \spellcasttime      : ] #3
+		\item [ \spellrange         : ] #4
+		\item [ \spellcomponents    : ] #5
+		\item [ \spellduration      : ] #6
+	\end{description}
 }
