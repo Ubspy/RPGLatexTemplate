@@ -1,0 +1,78 @@
+% Set pagestyle to fancy (from fancyhdr package)
+\pagestyle{fancy}
+
+% Remove header and footer rule widths that are predefined
+\renewcommand*{\headrulewidth}{0pt}
+\renewcommand*{\footrulewidth}{0pt}
+
+% Clears current header
+\fancyhf{}
+
+% Set fancy footer for even pages on the left
+\fancyfoot[LE]
+{
+    \RPGFontFooter \leftmark
+    \begin{tikzpicture}[remember picture, overlay]
+        \node
+        [
+            xscale = -1, % Horizontally flip the image
+            inner sep = 0pt,
+            anchor = south, % Anchor it at the bottom of the page
+            nearly opaque % Add some transparency
+        ] at (current page.south)
+        {
+            \includegraphics[width=\paperwidth, height=.6in]{images/footer.png}
+        };
+
+        % Shift the page number to fit in the little groove on the footer png
+        \node
+        [
+            inner sep = 0pt,
+            anchor = south,
+            xshift = 0.28in,
+            yshift = 0.39in
+        ] at (current page.south west)
+        {
+            \RPGFontFooter \thepage
+        };
+    \end{tikzpicture}
+}
+
+% Set fancy footer for odd pages on the right
+\fancyfoot[RO]
+{
+    \RPGFontFooter \leftmark
+    \begin{tikzpicture}[remember picture, overlay]
+        \node
+        [
+            inner sep = 0pt,
+            anchor = south, % Anchor it at the bottom of the page
+            nearly opaque % Add some transparency
+        ] at (current page.south)
+        {
+            \includegraphics[width=\paperwidth, height=.6in]{images/footer.png}
+        };
+
+        % Shift the page number to fit in the little groove on the footer png
+        \node
+        [
+            inner sep = 0pt,
+            anchor = south,
+            xshift = -0.28in, % Opposite shift of the left page
+            yshift = 0.39in
+        ] at (current page.south east)
+        {
+            \RPGFontFooter \thepage
+        };
+    \end{tikzpicture}
+}
+
+% Specifies that we want to use the fancy page stuff on plain pages
+% (I think I'm actually not 100% sure what this does)
+\fancypagestyle{plain}{}
+
+% We only want footers on empty pages
+\fancypagestyle{empty}
+{
+    \fancyfoot{}
+}

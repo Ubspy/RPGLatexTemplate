@@ -16,32 +16,44 @@
 
 % Make commands for each font
 % First set of brackets is for the parameters, of which there are none
-\NewDocumentCommand{\RPGFontChapter}{}{
+\NewDocumentCommand{\RPGFontChapter}{}
+{
 	\color{titletext}
 	\Huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
 }
 
-\NewDocumentCommand{\RPGFontSection}{}{
+\NewDocumentCommand{\RPGFontSection}{}
+{
 	\color{titletext}
 	\huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
 }
 
-\NewDocumentCommand{\RPGFontSubsection}{}{
+\NewDocumentCommand{\RPGFontSubsection}{}
+{
 	\color{titletext}
 	\Large\fontfamily{MrEavesSCRemake-TLF}\selectfont
 }
 
-\NewDocumentCommand{\RPGFontSubsubsection}{}{
+\NewDocumentCommand{\RPGFontSubsubsection}{}
+{
 	\color{titletext}
 	\large\fontfamily{MrEavesSCRemake-TLF}\selectfont
 }
 
-\NewDocumentCommand{\RPGFontParagraph}{}{
+\NewDocumentCommand{\RPGFontParagraph}{}
+{
 	\color{black}
 	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
 }
 
-\NewDocumentCommand{\RPGFontSubparagraph}{}{
+\NewDocumentCommand{\RPGFontSubparagraph}{}
+{
 	\color{black}
 	\small\fontfamily{BookInsanity-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontFooter}{}
+{
+	\color{footer}
+	\scriptsize\fontfamily{BookInsanity-TLF}\selectfont
 }
