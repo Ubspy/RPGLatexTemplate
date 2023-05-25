@@ -1,14 +1,19 @@
 % Template document for tabletop rpg games
 
-% Use the memoir package, it's basically an extended version of the book class
-\documentclass{memoir}
+% We need to disable loading the mparhack package in memoir or it will break literally everything
+\makeatletter
+\disable@package@load{mparhack}{}
+\makeatother
 
+% Use the memoir package, it's basically an extended version of the book class
+\documentclass[letterpaper,twocolumn,openany]{memoir}
 \usepackage{lipsum}
+\usepackage{hyperref}
 
 % Package for setting background image
 \usepackage{background}
 
-\usepackage{hyperref}
+\usepackage{graphicx}
 
 \hypersetup{
     colorlinks,
@@ -18,11 +23,9 @@
     urlcolor=black
 }
 
-\RequirePackage{lib/sections}
-
 % Set path for images files
 \graphicspath{{./images/}}
- 
+
 % Sets default background image
 \backgroundsetup{
 	scale=1,
@@ -33,6 +36,10 @@
 		\includegraphics[width=\paperwidth, height=\paperheight]{images/PHB-background.png}
 	}
 }
+
+\RequirePackage{lib/sections}
+\RequirePackage{lib/header-footer}
+
 % Use \NoBgThispage to skip background on current page
 % User \BgThisPage to resume
 
@@ -48,6 +55,13 @@
 % Start of document
 \begin{document}
 
+% \begin{tikzpicture}[remember picture,overlay]
+% 	\node[inner sep = 0pt] at (current page.center)
+% 	{
+% 		\includegraphics[width=\paperwidth, height=\paperheight]{images/PHB-background.png}
+% 	};
+% \end{tikzpicture}
+
 % Create a table of contents
 \tableofcontents
 
@@ -56,7 +70,7 @@
 \lipsum
 
 % TODO: Best way to do this is with hyperref
-I love the Hommlets \ref{hommlet-village}
+% I love the Hommlets \ref{hommlet-village}
 
 \chapter{The Voloman Empire}
 
@@ -67,34 +81,34 @@ asdf
 
 \chapter{Test}
 It works :)
-\RPGSpellHeader
-	{Beautiful Typesetting}
-	{4th-level illusion}
-	{1 action}
-	{5 feet}
-	{S, M (ink and parchment, which the spell consumes)}
-	{Until dispelled}
-You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+% \RPGSpellHeader
+% 	{Beautiful Typesetting}
+% 	{4th-level illusion}
+% 	{1 action}
+% 	{5 feet}
+% 	{S, M (ink and parchment, which the spell consumes)}
+% 	{Until dispelled}
+% You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
 
 \subsection{Subsection}
 Subsections further break down the information for the reader.
 
-\RPGArea{Village of Hommlet} \label{hommlet-village}
-This is the village of hommlet.
+% \RPGArea{Village of Hommlet} \label{hommlet-village}
+% This is the village of hommlet.
 
-\RPGSubArea{Inn of the Welcome Wench}
-Inside the village is the inn of the Welcome Wench.
+% \RPGSubArea{Inn of the Welcome Wench}
+% Inside the village is the inn of the Welcome Wench.
 
-\RPGSubArea{Blacksmith's Forge}
-There's a blacksmith in town, too.
+% \RPGSubArea{Blacksmith's Forge}
+% There's a blacksmith in town, too.
 
-\RPGArea{Foo's Castle}
-This is foo's home, a hovel of mud and sticks.
+% \RPGArea{Foo's Castle}
+% This is foo's home, a hovel of mud and sticks.
 
-\RPGSubArea{Moat}
-This ditch has a board spanning it.
+% \RPGSubArea{Moat}
+% This ditch has a board spanning it.
 
-\RPGSubArea{Entrance}
-A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
+% \RPGSubArea{Entrance}
+% A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
 
 \end{document}

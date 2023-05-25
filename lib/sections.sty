@@ -6,6 +6,8 @@
 \RequirePackage{titlesec}
 
 \RequirePackage{enumitem}
+\RequirePackage{ragged2e}
+\RequirePackage{geometry}
 
 % Remove section numbers
 \setcounter{secnumdepth}{0}
@@ -14,6 +16,31 @@
 \setlength{\textfloatsep}{11pt plus 4pt minus 4pt}
 \setlength{\intextsep}{11pt plus 4pt minus 4pt}
 \setlength{\dbltextfloatsep}{11pt plus 4pt minus 4pt}
+
+% Customize itemize environment.
+\setlist{leftmargin=1em}
+\setitemize{noitemsep,topsep=0.5ex}
+\renewcommand{\labelitemi}{\raisebox{0.25ex}{\tiny{\( \bullet \)}}}
+
+% Set paragraph and line spacing
+\setlength {\parindent}            {1em}
+\setlength {\RaggedRightRightskip} {0pt plus 1em}
+\setlength {\RaggedRightParindent} {\parindent}
+
+\tolerance        = 1
+\emergencystretch = \maxdimen
+\hyphenpenalty    = 10000
+\hbadness         = 10000
+
+% Set page geometry.
+\geometry
+{
+  hmargin   = .75in, % Left and right margins
+  top       = .46in, % Top of text area to top of page
+  bottom    = .8in,  % Bottom of text area to bottom of page
+  footskip  = .32in, % Bottom of text area to bottom of footer text
+  columnsep = .33in, % Space between columns
+}
 
 % ------------------ %
 % Section formatting %
@@ -223,5 +250,5 @@
 % #2
 \NewDocumentCommand{\RPGAreaRef}{ o m }
 {
-	
+
 }
