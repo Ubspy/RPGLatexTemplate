@@ -10,6 +10,7 @@
 % Specify pdfmapfiles for each imported font
 \pdfmapfile{MrEavesSCRemake.map} % MrEavesSCRemake-TLF
 \pdfmapfile{BookInsanity.map} % Book Insanity
+\pdfmapfile{ScalySansRemake.map} % Scaly Sans
 
 % Set the default font
 \renewcommand{\familydefault}{BookInsanity-TLF}
@@ -56,4 +57,17 @@
 {
 	\color{footer}
 	\scriptsize\fontfamily{BookInsanity-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontBoxTitle}{}
+{
+	\color{black}
+	% Set the font default to be normal bold
+	\footnotesize\fontfamily{ScalySansRemake-TLF}\bfseries\selectfont
+}
+
+\NewDocumentCommand{\RPGFontBoxBody}{}
+{
+	\color{black}
+	\scriptsize\fontfamily{ScalySansRemake-TLF}\selectfont
 }
