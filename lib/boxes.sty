@@ -1,0 +1,65 @@
+% ----------- %
+% Comment Box %
+% ----------- %
+\DeclareTColorBox{RPGComment}{o}
+{
+	before upper = \RaggedRight,            % Justify text right
+	code = \linespread{0.9},                % Set spacing between lines
+	frame hidden,                           % Hide frame around box
+	enhanced, 
+	boxrule = 0pt,                          % Set spacing between title and body to zero
+	before skip = 13pt plus 4pt minus 4pt,  % Add spacing before and after color box
+	after skip = 13pt plus 4pt minus 4pt,
+	toptitle = 2pt,                         % Adds spacing around title text
+	boxsep = 3pt,                           % Adds spacing between title and body
+	left = 6pt,                             % Adds spacing to the left of the text
+	right = 6pt,                            % Adds spacing to the right of the text
+	top = 0pt,								% Sets spacing for above all text 
+	bottom = 2pt,							% Sets spacing below all text
+	sharp corners,							% Sets corners to be sharp instead of rounded
+	parbox = false,							% Turns off indentaion on body text
+	fonttitle = \RPGFontBoxTitle,			% Set fonts for text box
+	fontupper = \RPGFontBoxBody,
+	fontlower = \RPGFontBoxBody,
+	coltitle = black,						% Set text color
+	colback = tableprimary,					% Set background color
+	colbacktitle = tableprimary,
+	title = {#1},							% Set title of the box
+}
+
+% ------------------ %
+% Read Aloud Section %
+% ------------------ %
+\DeclareTColorBox{RPGReadAloud}{}
+{
+	before upper = \RaggedRight,					% Justify text right
+	code = \linespread{1.1},						% Set line spacing
+	enhanced jigsaw,								% Honestly no idea
+	frame hidden,									% Hide frame on box
+	enhanced,									
+	boxrule = 0pt,									% Set spacing between title and body to zero
+	breakable,										% Also no idea
+	before skip = 13pt plus 4pt minus 4pt,			% Set spacing before and after box
+	after skip = 13pt plus 4pt minus 4pt,
+	boxsep = 8pt,									% Adds spacing between title and body
+	top = 0pt,										% Sets no spacing at the top of the text
+	left = 0pt,										% Sets no spacing to the left of the text
+	right = 0pt,									% Sets no spacing to the right of the text
+	bottom = 0pt,									% Sets no spacing on the bottom of the text
+	sharp corners,									% Sets corners to be sharp instead of rounded
+	parbox = false,									% Turns off indentaion on body text
+	borderline west = {1pt} {-0.5pt} {statblocks},	% Adds borders on left and right
+	borderline east = {1pt} {-0.5pt} {statblocks},
+	overlay = 
+	{
+		% A for loop that will replace \i with each entry separated by a comma
+		\foreach \I in {north east, north west, south east, south west}
+		{
+			\draw[statblocks, fill = statblocks] (frame.\I) circle (1.5pt);
+		};
+	},
+	fontupper = \RPGFontBoxBody,					% Set fonts for body text
+	fontlower = \RPGFontBoxBody,
+	colback = background,							% Set background color
+	colbacktitle = background,
+}
