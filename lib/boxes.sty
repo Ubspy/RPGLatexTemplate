@@ -22,13 +22,6 @@
 	borderline south = {1.25pt} {-0.625pt} {black},
 	overlay = 
 	{
-		% A for loop that will replace \I with each entry separated by a comma
-		% \foreach \I in {north east, north west, south east, south west}
-		% {
-		% 	% \draw[black, fill = black] (frame.\I) trapeziod (1.5pt);
-		% 	\draw[black, fill = black] (frame.\I) -- (frame.\I){} + (5,0) -- (frame.\I){} + (5,5);
-		% };
-
 		% I would love to foreach this but each corner has different directions so I'm not sure if that's possible
 		\draw[black, fill = black]	($ (frame.north west) + (0.25, 0) $) -- 
 									($ (frame.north west) + (0.25, 0.18) $) -- 
@@ -53,6 +46,7 @@
 	fonttitle = \RPGFontBoxTitle,					% Set fonts for text box
 	fontupper = \RPGFontBoxBody,
 	fontlower = \RPGFontBoxBody,
+	fuzzy halo = 0.5mm with black!40!white,			% Adds shadow
 	coltitle = black,								% Set text color
 	colback = tableprimary,							% Set background color
 	colbacktitle = tableprimary,		
@@ -66,11 +60,10 @@
 {
 	before upper = \RaggedRight,					% Justify text right
 	code = \linespread{1.1},						% Set line spacing
-	% enhanced jigsaw,								% Honestly no idea
 	frame hidden,									% Hide frame on box
 	enhanced,									
 	boxrule = 0pt,									% Set spacing between title and body to zero
-	% breakable,										% Also no idea
+	breakable,										% Adjusts box to have natural height
 	before skip = 13pt plus 4pt minus 4pt,			% Set spacing before and after box
 	after skip = 13pt plus 4pt minus 4pt,
 	boxsep = 8pt,									% Adds spacing between title and body
@@ -92,6 +85,7 @@
 	},
 	fontupper = \RPGFontBoxBody,					% Set fonts for body text
 	fontlower = \RPGFontBoxBody,
+	fuzzy halo = 0.5mm with black!40!white,			% Adds shadow
 	colback = background,							% Set background color
 	colbacktitle = background,
 }
