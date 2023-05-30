@@ -3,28 +3,60 @@
 % ----------- %
 \DeclareTColorBox{RPGComment}{o}
 {
-	before upper = \RaggedRight,            % Justify text right
-	code = \linespread{0.9},                % Set spacing between lines
-	frame hidden,                           % Hide frame around box
+	before upper = \RaggedRight,            		% Justify text right
+	code = \linespread{0.9},                		% Set spacing between lines
+	frame hidden,                           		% Hide frame around box
 	enhanced, 
-	boxrule = 0pt,                          % Set spacing between title and body to zero
-	before skip = 13pt plus 4pt minus 4pt,  % Add spacing before and after color box
+	boxrule = 0pt,                          		% Set spacing between title and body to zero
+	before skip = 13pt plus 4pt minus 4pt,  		% Add spacing before and after color box
 	after skip = 13pt plus 4pt minus 4pt,
-	toptitle = 2pt,                         % Adds spacing around title text
-	boxsep = 3pt,                           % Adds spacing between title and body
-	left = 6pt,                             % Adds spacing to the left of the text
-	right = 6pt,                            % Adds spacing to the right of the text
-	top = 0pt,								% Sets spacing for above all text 
-	bottom = 2pt,							% Sets spacing below all text
-	sharp corners,							% Sets corners to be sharp instead of rounded
-	parbox = false,							% Turns off indentaion on body text
-	fonttitle = \RPGFontBoxTitle,			% Set fonts for text box
+	toptitle = 2pt,                         		% Adds spacing around title text
+	boxsep = 3pt,                           		% Adds spacing between title and body
+	left = 6pt,                             		% Adds spacing to the left of the text
+	right = 6pt,                            		% Adds spacing to the right of the text
+	top = 0pt,										% Sets spacing for above all text 
+	bottom = 2pt,									% Sets spacing below all text
+	sharp corners,									% Sets corners to be sharp instead of rounded
+	parbox = false,									% Turns off indentaion on body text
+	borderline north = {1.25pt} {-0.625pt} {black},	% Adds borders to top and bottom of box
+	borderline south = {1.25pt} {-0.625pt} {black},
+	overlay = 
+	{
+		% A for loop that will replace \I with each entry separated by a comma
+		% \foreach \I in {north east, north west, south east, south west}
+		% {
+		% 	% \draw[black, fill = black] (frame.\I) trapeziod (1.5pt);
+		% 	\draw[black, fill = black] (frame.\I) -- (frame.\I){} + (5,0) -- (frame.\I){} + (5,5);
+		% };
+
+		% I would love to foreach this but each corner has different directions so I'm not sure if that's possible
+		\draw[black, fill = black]	($ (frame.north west) + (0.25, 0) $) -- 
+									($ (frame.north west) + (0.25, 0.18) $) -- 
+									($ (frame.north west) + (0, 0.02) $) -- 
+									(frame.north west);
+
+		\draw[black, fill = black]	($ (frame.north east) + (-0.25, 0) $) -- 
+									($ (frame.north east) + (-0.25, 0.18) $) -- 
+									($ (frame.north east) + (0, 0.02) $) -- 
+									(frame.north east);
+		
+		\draw[black, fill = black]	($ (frame.south west) + (0.25, 0) $) -- 
+									($ (frame.south west) + (0.25, -0.18) $) -- 
+									($ (frame.south west) + (0, -0.02) $) -- 
+									(frame.south west);
+
+		\draw[black, fill = black]	($ (frame.south east) + (-0.25, 0) $) -- 
+									($ (frame.south east) + (-0.25, -0.18) $) -- 
+									($ (frame.south east) + (0, -0.02) $) -- 
+									(frame.south east);
+	},
+	fonttitle = \RPGFontBoxTitle,					% Set fonts for text box
 	fontupper = \RPGFontBoxBody,
 	fontlower = \RPGFontBoxBody,
-	coltitle = black,						% Set text color
-	colback = tableprimary,					% Set background color
-	colbacktitle = tableprimary,
-	title = {#1},							% Set title of the box
+	coltitle = black,								% Set text color
+	colback = tableprimary,							% Set background color
+	colbacktitle = tableprimary,		
+	title = {#1},									% Set title of the box
 }
 
 % ------------------ %
@@ -34,11 +66,11 @@
 {
 	before upper = \RaggedRight,					% Justify text right
 	code = \linespread{1.1},						% Set line spacing
-	enhanced jigsaw,								% Honestly no idea
+	% enhanced jigsaw,								% Honestly no idea
 	frame hidden,									% Hide frame on box
 	enhanced,									
 	boxrule = 0pt,									% Set spacing between title and body to zero
-	breakable,										% Also no idea
+	% breakable,										% Also no idea
 	before skip = 13pt plus 4pt minus 4pt,			% Set spacing before and after box
 	after skip = 13pt plus 4pt minus 4pt,
 	boxsep = 8pt,									% Adds spacing between title and body
@@ -52,7 +84,7 @@
 	borderline east = {1pt} {-0.5pt} {statblocks},
 	overlay = 
 	{
-		% A for loop that will replace \i with each entry separated by a comma
+		% A for loop that will replace \I with each entry separated by a comma
 		\foreach \I in {north east, north west, south east, south west}
 		{
 			\draw[statblocks, fill = statblocks] (frame.\I) circle (1.5pt);
