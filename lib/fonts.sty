@@ -11,6 +11,7 @@
 \pdfmapfile{MrEavesSCRemake.map} % MrEavesSCRemake-TLF
 \pdfmapfile{BookInsanity.map} % BookInsanity-TLF
 \pdfmapfile{ScalySansRemake.map} % ScalySansRemake-TLF
+\pdfmapfile{ScalySans.map} % ScalySans-TLF, this is the small caps version
 
 % Set the default font
 \renewcommand{\familydefault}{BookInsanity-TLF}
@@ -70,4 +71,16 @@
 {
 	\color{black}
 	\scriptsize\fontfamily{ScalySansRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontTableTitle}{}
+{
+	\color{black}
+	\large\fontfamily{ScalySans-TLF}\scshape\selectfont
+}
+
+\NewDocumentCommand{\RPGFontTableBody}{}
+{
+	\color{black}
+	\footnotesize\fontfamily{ScalySansRemake-TLF}\normalfont\selectfont
 }
