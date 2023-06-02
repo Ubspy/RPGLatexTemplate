@@ -59,35 +59,35 @@
 % ------------------ %
 \DeclareTColorBox{RPGReadAloud}{}
 {
-	before upper = \RaggedRight,					% Justify text right
-	code = \linespread{1.1},						% Set line spacing
-	frame hidden,									% Hide frame on box
-	enhanced,									
-	boxrule = 0pt,									% Set spacing between title and body to zero
-	breakable,										% Adjusts box to have natural height
-	before skip = 13pt plus 4pt minus 4pt,			% Set spacing before and after box
+	before upper = \RaggedRight,						% Justify text right
+	code = \linespread{1.1},							% Set line spacing
+	frame hidden,										% Hide frame on box
+	enhanced,
+	boxrule = 0pt,										% Set spacing between title and body to zero
+	breakable,											% Adjusts box to have natural height
+	before skip = 13pt plus 4pt minus 4pt,				% Set spacing before and after box
 	after skip = 13pt plus 4pt minus 4pt,
-	boxsep = 8pt,									% Adds spacing between title and body
-	top = 0pt,										% Sets no spacing at the top of the text
-	left = 0pt,										% Sets no spacing to the left of the text
-	right = 0pt,									% Sets no spacing to the right of the text
-	bottom = 0pt,									% Sets no spacing on the bottom of the text
-	sharp corners,									% Sets corners to be sharp instead of rounded
-	parbox = false,									% Turns off indentaion on body text
-	borderline west = {1pt} {-0.5pt} {statblocks},	% Adds borders on left and right
-	borderline east = {1pt} {-0.5pt} {statblocks},
+	boxsep = 8pt,										% Adds spacing between title and body
+	top = 0pt,											% Sets no spacing at the top of the text
+	left = 0pt,											% Sets no spacing to the left of the text
+	right = 0pt,										% Sets no spacing to the right of the text
+	bottom = 0pt,										% Sets no spacing on the bottom of the text
+	sharp corners,										% Sets corners to be sharp instead of rounded
+	parbox = false,										% Turns off indentaion on body text
+	borderline west = {1pt} {-0.5pt} {statblocklines},	% Adds borders on left and right
+	borderline east = {1pt} {-0.5pt} {statblocklines},
 	overlay = 
 	{
 		% A for loop that will replace \I with each entry separated by a comma
 		\foreach \I in {north east, north west, south east, south west}
 		{
-			\draw[statblocks, fill = statblocks] (frame.\I) circle (1.5pt);
+			\draw[statblocklines, fill = statblocklines] (frame.\I) circle (1.5pt);
 		};
 	},
-	fontupper = \RPGFontBoxBody,					% Set fonts for body text
+	fontupper = \RPGFontBoxBody,						% Set fonts for body text
 	fontlower = \RPGFontBoxBody,
 	fuzzy shadow =	{0mm} {-3.75pt} {-0.75pt}			% Adds shadow
 					{0.4mm} {black!60!white},
-	colback = background,							% Set background color
+	colback = background,								% Set background color
 	colbacktitle = background,
 }

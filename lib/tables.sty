@@ -1,11 +1,19 @@
-\NewDocumentEnvironment{RPGTable}{ o }
+% Create new column type that's horizontally centered
+\newcolumntype{Y}
+	{ > { \centering \arraybackslash } X }
+
+\NewDocumentEnvironment{RPGTable}{ o m }
 {
     % New paragraph with funny spacing, but don't indent
     \par \vspace { 9pt plus 3pt minus 3pt } \noindent
 
-    \RPGFontTableTitle
-    {#1}
-    \par \vspace{ 5pt plus 2pt minus 2pt } \noindent
+    % Only put title if it was passed
+    \IfValueTF{#1}
+    {
+        \RPGFontTableTitle
+        {#1}
+        \par \vspace{ 5pt plus 2pt minus 2pt } \noindent
+    }{}
     
     % Set font of table
     \RPGFontTableBody
@@ -17,7 +25,7 @@
     % Side note: I spent almost 2 hours trying to figure out why it wouldn't
     % compile using \begin{tabularx} apparently that doesn't work
     % 0.96 of linewidth to avoid full hbox
-    \tabularx{0.96\linewidth}{XX}
+    \tabularx{0.96\linewidth}{#2}
 }
 {
     \endtabularx
