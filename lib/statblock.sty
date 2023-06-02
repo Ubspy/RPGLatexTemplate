@@ -1,0 +1,152 @@
+% -------------------- %
+% Stat Block Color Box %
+% -------------------- %
+\DeclareTColorBox{RPGStatBlock}{ O{} m }
+{
+	enhanced,
+	frame hidden,
+	before skip      = 12pt plus 3pt minus 3pt,
+	boxrule          = 0pt,
+	breakable,
+	parbox           = false,
+	boxsep           = 2pt,
+	toptitle         = 8pt,
+	top              = 0pt,
+	left             = 2pt,
+	right            = 6pt,
+	bottom           = 7pt,
+	sharp corners,
+	oversize         = 0pt,
+	borderline north = {3pt} {0pt}   {titletext},
+	borderline north = {2pt} {0.5pt} {statblockribbon},
+	borderline south = {3pt} {0pt}   {titletext},
+	borderline south = {2pt} {0.5pt} {statblockribbon},
+	colback          = statblockbg,
+	colbacktitle     = statblockbg,
+	colframe         = titletext,
+	fonttitle        = \RPGFontStatBlockTitle,
+	coltitle         = titletext,
+	fontupper        = \RPGFontStatBlockBody,
+	fontlower        = \RPGFontStatBlockBody,
+	title            = {#2},
+	#1
+}
+
+% --------------------------- %
+% Subsections for Stat Blocks %
+% --------------------------- %
+\NewDocumentCommand{\RPGStatBlockType}{ m }
+{
+    \begin{hangingpar}
+        \textit{#1}
+    \end{hangingpar}
+}
+
+\NewDocumentCommand{\RPGStatBlockLine}{}
+{
+    \par \vspace{-2pt} \noindent
+    \begin {tikzpicture}
+      \draw [ statblocklist, fill = statblocklist ] ( 0, 0 ) -- ( 0, 0.1 ) -- ( \linewidth, 0.05 );
+    \end {tikzpicture}
+    \par
+}
+
+\newlist{RPGStatBlockAttributes}{description}{1}
+\setlist[RPGStatBlockAttributes]
+{
+	before = \color{titletext},
+	font = \RPGFontStatBlockBody,
+	nosep,
+	labelindent = 0pt,
+	labelwidth = 0pt,
+	labelsep* = 0pt,
+	leftmargin = !,
+	style = standard
+}
+
+\NewDocumentEnvironment{RPGStatBlockDetails}{}
+{
+	\RPGStatBlockLine{}
+	\begin{RPGStatBlockAttributes}
+}
+{
+	\end{RPGStatBlockAttributes}
+	\RPGStatBlockLine{}
+}
+
+% Arguments in order are the stats for: strength, dexterity, constitution,
+% intelligence, wisdom and charisma
+\NewDocumentCommand{\RPGStatBlockAbilityScores}{ m m m m m m }
+{
+	\color{titletext}
+	\par \vspace{1pt} \noindent
+    \begin{tabularx}{\linewidth}{YYYYYY}
+		\rule {0pt} {3.7mm} % adds space between hline and table
+		\textbf {\strstatname} &
+		\textbf {\dexstatname} &
+		\textbf {\constatname} &
+		\textbf {\intstatname} &
+		\textbf {\wisstatname} &
+		\textbf {\chastatname} \\
+		{#1} &
+		{#2} &
+		{#3} &
+		{#4} &
+		{#5} &
+		{#6}
+	\end{tabularx}
+	\par \vspace{4pt}
+}
+
+\NewDocumentCommand{\RPGStatBlockAction}{ m }
+{
+	\color{black}
+	\RPGFontStatBlockBody
+	\par\smallskip\noindent
+	\textsl{\textbf{#1.}}
+}
+
+\NewDocumentCommand{\RPGStatBlockSubAction}{ m }
+{
+	\color{black}
+	\par
+	\textsl{\textbf{#1.}}
+}
+
+\NewDocumentCommand{\RPGStatBlockSection}{ m }
+{
+	\addvspace{6pt plus 2pt minus 2pt} \noindent
+	\RPGFontStatBlockSection{#1}
+	\vspace {2pt}
+	\hrule height 0.6pt
+	\par \vspace{5pt}
+    \noindent \ignorespaces
+	\color{black}
+	\RPGFontStatBlockBody
+}
+
+\newlist{RPGStatBlockSpell}{description}{1}
+\setlist[RPGStatBlockSpell]
+{
+	font = \RPGFontStatBlockBody,
+	noitemsep,
+	topsep = 6pt plus 2pt minus 2pt,
+	labelindent=0pt,
+	labelwidth=0pt,
+	labelsep*=0pt,
+	leftmargin=!,
+	style=standard
+}
+
+\newlist{RPGMonsterLegendaryActions}{description}{1}
+\setlist[RPGMonsterLegendaryActions]
+{
+	font     = \RPGFontStatBlockBody,
+	noitemsep,
+	topsep   = 6pt plus 2pt minus 2pt,
+}
+
+\NewDocumentCommand{\RPGMonsterLegendaryAction}{ m m }
+{
+	\item[#1.]{#2}
+}

@@ -1,3 +1,8 @@
+\PassOptionsToPackage {table} {xcolor}
+
+%
+\RequirePackage{array}
+
 % Package for setting background image
 \RequirePackage{background}
 
@@ -6,6 +11,9 @@
 
 % Make it so we can have stylalized lists
 \RequirePackage{enumitem}
+
+% Lets us use addvspace to add vertical spacing where we want it
+\RequirePackage{etoolbox}
 
 % Allows for left right and center justification
 \RequirePackage{ragged2e}
@@ -18,6 +26,12 @@
 
 % Load the font encoder package, required to render custom fonts
 \RequirePackage[T1]{fontenc}
+
+% Allow hanging paragraphs
+\RequirePackage{hang}
+
+% Allows small sections with multiple columns
+\RequirePackage{multicol}
 
 % For drawing lines and other special shapes
 \RequirePackage{tikz}
@@ -36,12 +50,15 @@
 % Package for defining all the colors
 \RequirePackage{xcolor}
 
+% Import base packages first
 \RequirePackage{lib/colors}
 \RequirePackage{lib/constants}
 \RequirePackage{lib/fonts}
+\RequirePackage{lib/page-style}
 
+% Then everything else
 \RequirePackage{lib/boxes}
 \RequirePackage{lib/footers}
-\RequirePackage{lib/page-style}
 \RequirePackage{lib/sections}
+\RequirePackage{lib/statblock}
 \RequirePackage{lib/tables}

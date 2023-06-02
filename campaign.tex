@@ -98,11 +98,96 @@ A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
 	As you approach this module you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
 \end{RPGReadAloud}
 
-\begin{RPGTable}[Nice Table]
+\begin{RPGTable}[Nice Table]{XX}
 	\textbf{Table head}  & \textbf{Table head} \\
     Some value  & Some value \\
     Some value  & Some value \\
     Some value  & Some value
 \end{RPGTable}
+
+\par
+
+\begin{RPGTable}{XX}
+	\textbf{Table head}  & \textbf{Table head} \\
+    Some value  & Some value \\
+    Some value  & Some value \\
+    Some value  & Some value
+\end{RPGTable}
+
+\begin{RPGStatBlock}[float*=b,width=\textwidth + 8pt]{Gorgonzola}
+	\begin{multicols}{2}
+		\RPGStatBlockType{Medium aberration (metasyntactic variable), neutral evil}
+
+		\begin{RPGStatBlockDetails}
+			\item \textbf{Armor Class} 9 (12 with \emph{mage armor})
+			\item \textbf{Hit Points} 16 (3d8 + 3)
+			\item \textbf{Speed} 30 ft., fly 30 ft.
+		\end{RPGStatBlockDetails}
+		
+		\RPGStatBlockAbilityScores{12}{8}{13}{10}{14}{15}
+
+		\begin{RPGStatBlockDetails}
+			\item \textbf{Senses} darkvision 60 ft., passive Perception 10
+			\item \textbf{Languages} Common, Goblin, Undercommon
+			\item \textbf{Challenge} 1 (200 XP)
+		\end{RPGStatBlockDetails}
+
+		\RPGStatBlockAction{Innate Spellcasting}
+    	Foo's spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks).
+		It can innately cast the following spells, requiring no material components:
+
+		\begin{RPGStatBlockSpell}
+			\item At will: \textit{misty step}
+			\item 3 per day each: \textit{fog cloud, rope trick}
+			\item 1 per day: \textit{identify}
+		\end{RPGStatBlockSpell}
+
+		\RPGStatBlockAction{Spellcasting}
+		Foo is a 2nd-level spellcaster. Its spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It has the following sorcerer spells prepared:
+		
+		\begin{RPGStatBlockSpell}
+			\setlength{\leftmargin}{0pt}
+			\item Cantrips (at will): \textit{blade ward, fire bolt, light, shocking grasp}
+			\item 1st level (3 slots): \textit{burning hands, mage armor, shield}
+		\end{RPGStatBlockSpell}
+
+		\columnbreak
+
+		\RPGStatBlockSection{Actions}
+		\RPGStatBlockAction{Multiattack}
+		The foo makes two melee attacks.
+
+		\RPGStatBlockAction{Dagger.}
+		\textit{Melee or Ranged Weapon Attack:} +3 to hit, reach 5 ft. or range 20/60ft.,
+		one target. \textit{Hit:} 3 (1d4 + 1) piercing damage.
+
+		\RPGStatBlockAction{Flame Tongue Longsword.}
+		\textit{Melee Weapon Attack:} +3 to hit, reach 5 ft., one target. \textit{Hit:}
+		5 (1d8 + 1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two hands,
+		plus 7 (2d6) fire damage.
+
+		\RPGStatBlockAction{Assassin's Light Crossbow.}
+		\textit{Ranged Weapon Attack:} +1 to hit, range 80/320 ft., one target.
+		\textit{Hit:} 4 (1d8) piercing damage, and the target must make a DC 15 Constitution saving throw,
+		taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.
+
+		\RPGStatBlockSection{Legendary Actions}
+    	The foo can take 3 legendary actions, choosing from the options below.
+		Only one legendary action option can be used at a time and only at the end of
+		another creature's turn. The foo regains spent legendary actions at the start
+		of its turn.
+
+		\begin{RPGMonsterLegendaryActions}
+			\RPGMonsterLegendaryAction{Move}{The foo moves up to its speed.}
+			\RPGMonsterLegendaryAction{Dagger Attack}{The foo makes a dagger attack.}
+			\RPGMonsterLegendaryAction{Create Contract (Costs 3 Actions)}
+			{The foo presents a contract in a language it knows and waves it in the face
+			of a creature within 10 feet. The creature must make a DC 10 Intelligence
+			saving throw. On a failure, the creature is incapacitated until the start of
+			the foo's next turn. A creature who cannot read the language in which the
+			contract is written has advantage on this saving throw.}
+		\end{RPGMonsterLegendaryActions}
+	\end{multicols}
+\end{RPGStatBlock}
 
 \end{document}
