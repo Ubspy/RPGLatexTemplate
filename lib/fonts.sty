@@ -18,6 +18,10 @@
 
 % Make commands for each font
 % First set of brackets is for the parameters, of which there are none
+
+% ------------- %
+% Section Fonts %
+% ------------- %
 \NewDocumentCommand{\RPGFontChapter}{}
 {
 	\color{titletext}
@@ -54,12 +58,18 @@
 	\small\fontfamily{BookInsanity-TLF}\selectfont
 }
 
+% ----------- %
+% Footer Font %
+% ----------- %
 \NewDocumentCommand{\RPGFontFooter}{}
 {
 	\color{footer}
 	\scriptsize\fontfamily{BookInsanity-TLF}\selectfont
 }
 
+% --------------- %
+% Color Box Fonts %
+% --------------- %
 \NewDocumentCommand{\RPGFontBoxTitle}{}
 {
 	\color{black}
@@ -73,6 +83,9 @@
 	\scriptsize\fontfamily{ScalySansRemake-TLF}\selectfont
 }
 
+% ----------- %
+% Table Fonts %
+% ----------- %
 \NewDocumentCommand{\RPGFontTableTitle}{}
 {
 	\color{black}
@@ -85,6 +98,9 @@
 	\footnotesize\fontfamily{ScalySansRemake-TLF}\normalfont\selectfont
 }
 
+% ---------------- %
+% Stat Block Fonts %
+% ---------------- %
 \NewDocumentCommand{\RPGFontStatBlockTitle}{}
 {
 	\color{titletext}
@@ -101,4 +117,25 @@
 {
 	\color{black}
 	\small\fontfamily{ScalySansRemake-TLF}\upshape\selectfont
+}
+
+% ---------------- %
+% Table of Content %
+% ---------------- %
+\NewDocumentCommand{\RPGFontToCChapter}{}
+{
+	\color{titletext}
+	\LARGE\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontToCSection}{}
+{
+	\color{titletext}
+	\Large\fontfamily{BookInsanity-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontToCSubSection}{}
+{
+	\color{titletext}
+	\large\fontfamily{BookInsanity-TLF}\selectfont
 }

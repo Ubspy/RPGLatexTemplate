@@ -51,3 +51,45 @@
 \emergencystretch = \maxdimen
 \hyphenpenalty    = 10000
 \hbadness         = 10000
+
+% ----------------- %
+% Table of Contents %
+% ----------------- %
+\settocdepth{subsection}
+
+\RequirePackage{tocloft}
+
+% \makeatletter
+% \xpatchcmd{\@chapter}
+% {
+% 	\addcontentsline{toc}{chapter}
+% 	{
+% 		\protect\numberline{\thechapter} #1
+% 	}
+% }
+% {
+% 	\addcontentsline{toc}{chapter}
+% 	{
+% 		\color{titletext}
+% 		\protect\numberline{\thechapter} #1
+% 	}
+% }{}{}
+% \makeatother
+
+\renewcommand{\cftchapterfont}{\RPGFontToCChapter}
+\renewcommand{\cftchapterpagefont}{\RPGFontToCChapter}
+
+\renewcommand{\cftsectionfont}{\RPGFontToCSection}
+\renewcommand{\cftsectionpagefont}{\RPGFontToCSection}
+
+\renewcommand{\cftsubsectionfont}{\RPGFontToCSubSection}
+\renewcommand{\cftsubsectionpagefont}{\RPGFontToCSubSection}
+
+% \renewcommand\cftsecfont{\LARGE}
+% \renewcommand\cftchappagefont{\LARGE\bfseries}
+% \renewcommand\cftsecpagefont{\LARGE}
+
+% \renewcommand\chaptitlefont{\LARGE\bfseries}
+% \renewcommand\cftsecfont{\LARGE}
+% \renewcommand\cftchappagefont{\LARGE\bfseries}
+% \renewcommand\cftsecpagefont{\LARGE}
