@@ -8,43 +8,34 @@
 % Set the document class to a book
 % I wanted to use memoir because supposedly it provides more functionality
 % but I could not get it to change any of the stuff in the table of contents
-\documentclass[letterpaper,twocolumn,openany]{memoir}
+\documentclass[letterpaper,twocolumn,openany,hidelinks]{memoir}
 \usepackage{lipsum}
-\usepackage{hyperref}
-\usepackage{bookmark}
-\usepackage{tabularx}
-\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[toc]{multitoc}
 
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
+\RequirePackage{rpg-core}
 
 % Set path for images files
 \graphicspath{{./images/}}
 
-\RequirePackage{rpg-core}
-
 % Use \NoBgThispage to skip background on current page
 % User \BgThisPage to resume
-
-% I can't for the life of me get these commands to show up for intellisense, redefining them allows that to happen
-% \newcommand{\NoBgThispage}{\NoBgThispage}
-% \newcommand{\BgThisPage}{\BgThisPage}
 
 % TODO: Title page
 \title{Simple Sample} % Sets article title
 \author{My Name} % Sets authors name
 \date{\today} % Sets date for date compiled
 
+% \setlength{\cftchapternumwidth}{1em}
+
 % Start of document
 \begin{document}
 
-% Create a table of contents
-\tableofcontents
+\begin{KeepFromToc}
+	\tableofcontents
+\end{KeepFromToc}
+
+\part{General Tests}
 
 \chapter{Highness Heist}
 
@@ -57,8 +48,11 @@
 
 asdf
 
-\subsection{Penis}
+\section{Penis}
+\subsection{Lipsum}
 \lipsum
+
+\part{Specific Tests}
 
 \chapter{Test}
 It works :)
@@ -71,7 +65,7 @@ It works :)
 	{Until dispelled}
 You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
 
-\subsection{Subsection}
+\section{Subsection}
 Subsections further break down the information for the reader.
 
 \RPGArea{Village of Hommlet} \label{hommlet-village}
@@ -191,6 +185,29 @@ A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
 		\end{RPGMonsterLegendaryActions}
 	\end{multicols}
 \end{RPGStatBlock}
+
+\part{Tests}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
+\chapter{Test}
 
 \end{document}
 

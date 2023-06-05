@@ -20,6 +20,11 @@
 %   after code
 % ]
 
+% Part formatting
+\renewcommand{\parttitlefont}{\RPGFontPart}
+\renewcommand{\partnamefont}{\RPGFontPart}
+\renewcommand{\partnumfont}{\RPGFontPart}
+
 % Chapter formatting
 \titleformat{\chapter}
 	{ \RPGFontChapter }
@@ -57,7 +62,7 @@
 	{ \nopagebreak }
 	[
 		% Make a page break with the custom color we defined but higher up than normal
-		\vspace{ -.3ex}
+		\vspace{-.3ex}
 		\titleline{\color{breakgold} \titlerule[1pt]}
 	]
 
