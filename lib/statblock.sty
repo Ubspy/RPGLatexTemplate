@@ -42,6 +42,7 @@
     \end{hangingpar}
 }
 
+% Draw a line in the stat block
 \NewDocumentCommand{\RPGStatBlockLine}{}
 {
     \par \vspace{-2pt} \noindent
@@ -51,6 +52,7 @@
     \par
 }
 
+% Create a new description list for listing attributes for a stat block
 \newlist{RPGStatBlockAttributes}{description}{1}
 \setlist[RPGStatBlockAttributes]
 {
@@ -64,6 +66,7 @@
 	style = standard
 }
 
+% Create a section for details in a stat block
 \NewDocumentEnvironment{RPGStatBlockDetails}{}
 {
 	\RPGStatBlockLine{}
@@ -98,6 +101,7 @@
 	\par \vspace{4pt}
 }
 
+% Create a new action in the stat block
 \NewDocumentCommand{\RPGStatBlockAction}{ m }
 {
 	\color{black}
@@ -106,6 +110,7 @@
 	\textsl{\textbf{#1.}}
 }
 
+% Create a subaction in a stat block
 \NewDocumentCommand{\RPGStatBlockSubAction}{ m }
 {
 	\color{black}
@@ -113,6 +118,7 @@
 	\textsl{\textbf{#1.}}
 }
 
+% Create a new section in a stat block, like actions and legendary actions
 \NewDocumentCommand{\RPGStatBlockSection}{ m }
 {
 	\addvspace{6pt plus 2pt minus 2pt} \noindent
@@ -125,6 +131,7 @@
 	\RPGFontStatBlockBody
 }
 
+% Create a new description list for spells in a stat block
 \newlist{RPGStatBlockSpell}{description}{1}
 \setlist[RPGStatBlockSpell]
 {
@@ -138,6 +145,7 @@
 	style=standard
 }
 
+% Create a new description list for legendary actions in a stat block
 \newlist{RPGMonsterLegendaryActions}{description}{1}
 \setlist[RPGMonsterLegendaryActions]
 {
@@ -146,6 +154,7 @@
 	topsep = 6pt plus 2pt minus 2pt,
 }
 
+% Create a new legendary action
 \NewDocumentCommand{\RPGMonsterLegendaryAction}{ m m }
 {
 	\item[#1.]{#2}

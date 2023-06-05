@@ -5,32 +5,26 @@
 \disable@package@load{mparhack}{}
 \makeatother
 
-% Set the document class to a book
-% I wanted to use memoir because supposedly it provides more functionality
-% but I could not get it to change any of the stuff in the table of contents
+% Set document class to memoir
+% The memoir class is an extention on the book class that has way more functionality
 \documentclass[letterpaper,twocolumn,openany,hidelinks]{memoir}
 \usepackage{lipsum}
-\usepackage{multicol}
-\usepackage[toc]{multitoc}
 
 \RequirePackage{rpg-core}
 
 % Set path for images files
 \graphicspath{{./images/}}
 
-% Use \NoBgThispage to skip background on current page
-% User \BgThisPage to resume
-
 % TODO: Title page
 \title{Simple Sample} % Sets article title
 \author{My Name} % Sets authors name
 \date{\today} % Sets date for date compiled
 
-% \setlength{\cftchapternumwidth}{1em}
-
 % Start of document
 \begin{document}
 
+% Wrapping table of contents in KeepFromToc stops
+% table of contents from listing itself
 \begin{KeepFromToc}
 	\tableofcontents
 \end{KeepFromToc}

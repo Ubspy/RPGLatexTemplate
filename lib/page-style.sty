@@ -55,24 +55,31 @@
 % ----------------- %
 % Table of Contents %
 % ----------------- %
-\RequirePackage{titlesec}
-
+% Set ToC to show all the way to subsections
 \settocdepth{subsection}
 
+% Set the table of contents title to print in the center using
+% a custom font
 \renewcommand{\printtoctitle}[1]{\filcenter\RPGFontToCTitle #1}
 
+% Set part font and how the part is written
 \renewcommand{\cftpartfont}{\RPGFontToCPart}
 \renewcommand{\cftpartpagefont}{\RPGFontToCPart}
 \renewcommand{\partnumberline}[1]{Part~#1:~}
+
+% Add a line after a part
 \renewcommand{\cftpartafterpnum}
 {
 	\vspace{.6ex}
 	{\color{breakgold}\hrule}
 }
 
+% Set ToC Chapter fonts
 \renewcommand{\cftchapterfont}{\RPGFontToCChapter}
 \renewcommand{\cftchapterpagefont}{\RPGFontToCChapter}
 
+% This was taken from stack exchange, I don't understand how it works
+% but it changes how it writes out chapters in ToC
 \makeatletter
 \renewcommand\cftchaptername{\chaptername~}
 \renewcommand\chapternumberline[1]
@@ -81,8 +88,10 @@
 }
 \makeatother
 
+% Set section fonts in ToC
 \renewcommand{\cftsectionfont}{\RPGFontToCSection}
 \renewcommand{\cftsectionpagefont}{\RPGFontToCSection}
 
+% Set subsection fonts in ToC
 \renewcommand{\cftsubsectionfont}{\RPGFontToCSubSection}
 \renewcommand{\cftsubsectionpagefont}{\RPGFontToCSubSection}
