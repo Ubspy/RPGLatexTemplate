@@ -55,41 +55,34 @@
 % ----------------- %
 % Table of Contents %
 % ----------------- %
+\RequirePackage{titlesec}
+
 \settocdepth{subsection}
 
-\RequirePackage{tocloft}
+\renewcommand{\printtoctitle}[1]{\filcenter\RPGFontToCTitle #1}
 
-% \makeatletter
-% \xpatchcmd{\@chapter}
-% {
-% 	\addcontentsline{toc}{chapter}
-% 	{
-% 		\protect\numberline{\thechapter} #1
-% 	}
-% }
-% {
-% 	\addcontentsline{toc}{chapter}
-% 	{
-% 		\color{titletext}
-% 		\protect\numberline{\thechapter} #1
-% 	}
-% }{}{}
-% \makeatother
+\renewcommand{\cftpartfont}{\RPGFontToCPart}
+\renewcommand{\cftpartpagefont}{\RPGFontToCPart}
+\renewcommand{\partnumberline}[1]{Part~#1:~}
+\renewcommand{\cftpartafterpnum}
+{
+	\vspace{.6ex}
+	{\color{breakgold}\hrule}
+}
 
 \renewcommand{\cftchapterfont}{\RPGFontToCChapter}
 \renewcommand{\cftchapterpagefont}{\RPGFontToCChapter}
+
+\makeatletter
+\renewcommand\cftchaptername{\chaptername~}
+\renewcommand\chapternumberline[1]
+{
+   \@chapapp@head\@cftbsnum {#1}:\@cftasnum~
+}
+\makeatother
 
 \renewcommand{\cftsectionfont}{\RPGFontToCSection}
 \renewcommand{\cftsectionpagefont}{\RPGFontToCSection}
 
 \renewcommand{\cftsubsectionfont}{\RPGFontToCSubSection}
 \renewcommand{\cftsubsectionpagefont}{\RPGFontToCSubSection}
-
-% \renewcommand\cftsecfont{\LARGE}
-% \renewcommand\cftchappagefont{\LARGE\bfseries}
-% \renewcommand\cftsecpagefont{\LARGE}
-
-% \renewcommand\chaptitlefont{\LARGE\bfseries}
-% \renewcommand\cftsecfont{\LARGE}
-% \renewcommand\cftchappagefont{\LARGE\bfseries}
-% \renewcommand\cftsecpagefont{\LARGE}

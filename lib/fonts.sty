@@ -122,6 +122,18 @@
 % ---------------- %
 % Table of Content %
 % ---------------- %
+\NewDocumentCommand{\RPGFontToCTitle}{}
+{
+	\color{titletext}
+	\Huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
+\NewDocumentCommand{\RPGFontToCPart}{}
+{
+	\color{titletext}
+	\huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
+}
+
 \NewDocumentCommand{\RPGFontToCChapter}{}
 {
 	\color{titletext}
@@ -130,12 +142,12 @@
 
 \NewDocumentCommand{\RPGFontToCSection}{}
 {
-	\color{titletext}
-	\Large\fontfamily{BookInsanity-TLF}\selectfont
+	\color{black}
+	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
 }
 
 \NewDocumentCommand{\RPGFontToCSubSection}{}
 {
-	\color{titletext}
-	\large\fontfamily{BookInsanity-TLF}\selectfont
+	\color{black}
+	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
 }
