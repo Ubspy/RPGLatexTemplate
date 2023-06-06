@@ -64,6 +64,25 @@
 	\small\fontfamily{BookInsanity-TLF}\selectfont
 }
 
+% --------- %
+% Drop Caps %
+% --------- %
+% Set drop cap font hook
+\renewcommand{\LettrineFontHook}{\Royal}
+
+% Add drop cap command
+\NewDocumentCommand{\RPGDropCap}{m}
+{
+	\RPGFontParagraph
+	\lettrine[
+		lines = 4,
+		depth = 0,
+		findent = 0.6ex,
+		nindent = 0pt,
+	]
+	{#1}{\normalfont{}}
+}
+
 % ----------- %
 % Footer Font %
 % ----------- %
