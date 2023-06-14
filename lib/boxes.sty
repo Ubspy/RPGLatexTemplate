@@ -10,8 +10,8 @@
 	boxrule = 0pt,                          		% Set spacing between title and body to zero
 	before skip = 13pt plus 4pt minus 4pt,  		% Add spacing before and after color box
 	after skip = 13pt plus 4pt minus 4pt,
-	toptitle = 2pt,                         		% Adds spacing around title text
-	boxsep = 3pt,                           		% Adds spacing between title and body
+	toptitle = \IfNoValueTF{#1}{0pt}{2pt},          % Adds spacing around title text, 0pt if no title
+	boxsep = \IfNoValueTF{#1}{2pt}{3pt},            % Adds spacing between title and body
 	left = 6pt,                             		% Adds spacing to the left of the text
 	right = 6pt,                            		% Adds spacing to the right of the text
 	top = 0pt,										% Sets spacing for above all text 
@@ -46,12 +46,12 @@
 	fonttitle = \RPGFontBoxTitle,					% Set fonts for text box
 	fontupper = \RPGFontBoxBody,
 	fontlower = \RPGFontBoxBody,
-	fuzzy shadow =	{0mm} {-3.75pt} {-0.75pt}			% Adds shadow
+	fuzzy shadow =	{0mm} {-3.75pt} {-0.75pt}		% Adds shadow
 					{0.4mm} {black!60!white},
 	coltitle = black,								% Set text color
 	colback = tableprimary,							% Set background color
-	colbacktitle = tableprimary,		
-	title = {#1},									% Set title of the box
+	colbacktitle = tableprimary,	
+	title = \IfNoValueTF{#1}{}{#1},					% Set title of the box
 }
 
 % ------------------ %
