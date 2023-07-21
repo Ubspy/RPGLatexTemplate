@@ -123,7 +123,7 @@
 % #1 is the feat title
 % #2 is a short description (ex. a feat presequisite)
 \NewDocumentCommand{\RPGFeatHeader}{ m o }
-{
+{%
 	% Make a subsection with the title given in the command
 	\subsection {#1}
 
@@ -133,18 +133,18 @@
 		\textit {#2}
 		\par \vspace{3pt} \noindent \ignorespaces
 	}
-}
+}%
 
 % This commands is for an item
 % #1: Item name
 % #2: Item description (ex: Monster item, legendary )
 \NewDocumentCommand{\RPGItemHeader}{ m m }
-{
+{%
 	% Same deal as the last one but this guy needs a description
 	\subsubsection {#1}
 	\textit {#2}
 	\par \vspace{3pt} \noindent \ignorespaces
-}
+}%
 
 % This is for a custom spell
 % #1 is the spell name
@@ -154,7 +154,7 @@
 % #5 are the spell components
 % #6 is the duration of the spell
 \NewDocumentCommand{\RPGSpellHeader}{ m m m m m m }
-{
+{%
 	% Reuse the item header since it's exactly what we need
 	\RPGItemHeader {#1} {#2}
 
@@ -171,7 +171,7 @@
 		\item [ \spellcomponents    : ] #5
 		\item [ \spellduration      : ] #6
 	\end{description}
-}
+}%
 
 % ---------------------------- %
 % Map sections and subsections %
@@ -185,9 +185,9 @@
 
 % Command to reset counter
 \NewDocumentCommand{\RPGResetAreas}{}
-{
+{%
 	\setcounter{RPGAreaCounter}{0}
-}
+}%
 
 % Commands for getting area and sub area names
 % These are already defined so we overwrite them
@@ -197,23 +197,15 @@
 % New area header
 % #1 is name of area
 \NewDocumentCommand{\RPGArea}{ m }
-{
+{%
 	\refstepcounter{RPGAreaCounter}
 	\subsection{\theRPGAreaCounter . ~ #1}
-}
+}%
 
 % New subarea header
 % #1 is sub area name
 \NewDocumentCommand{\RPGSubArea}{ m }
-{
+{%
 	\refstepcounter{RPGSubAreaCounter}
 	\subsubsection{\theRPGAreaCounter \theRPGSubAreaCounter . ~ #1}
-}
-
-% These are commands to make references to the areas
-% #1
-% #2
-\NewDocumentCommand{\RPGAreaRef}{ o m }
-{
-
-}
+}%

@@ -1,7 +1,8 @@
 % ------------------- %
 % Background of pages %
 % ------------------- %
-\backgroundsetup{
+\backgroundsetup
+{
 	scale=1,
 	color=black,
 	opacity=1,
@@ -75,10 +76,10 @@
 
 % Add a line after a part
 \renewcommand{\cftpartafterpnum}
-{
+{%
 	\vspace{.6ex}
 	{\color{breakgold}\hrule}
-}
+}%
 
 % Set ToC Chapter fonts
 \renewcommand{\cftchapterfont}{\RPGFontToCChapter}
@@ -89,9 +90,9 @@
 \makeatletter
 \renewcommand\cftchaptername{\chaptername~}
 \renewcommand\chapternumberline[1]
-{
+{%
    \@chapapp@head\@cftbsnum {#1}:\@cftasnum~
-}
+}%
 \makeatother
 
 % Set section fonts in ToC

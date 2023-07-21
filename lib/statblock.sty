@@ -36,21 +36,21 @@
 % Subsections for Stat Blocks %
 % --------------------------- %
 \NewDocumentCommand{\RPGStatBlockType}{ m }
-{
+{%
     \begin{hangingpar}
         \textit{#1}
     \end{hangingpar}
-}
+}%
 
 % Draw a line in the stat block
 \NewDocumentCommand{\RPGStatBlockLine}{}
-{
+{%
     \par \vspace{-2pt} \noindent
     \begin {tikzpicture}
       \draw [ statblocklist, fill = statblocklist ] ( 0, 0 ) -- ( 0, 0.1 ) -- ( \linewidth, 0.05 );
     \end {tikzpicture}
     \par
-}
+}%
 
 % Create a new description list for listing attributes for a stat block
 \newlist{RPGStatBlockAttributes}{description}{1}
@@ -68,19 +68,19 @@
 
 % Create a section for details in a stat block
 \NewDocumentEnvironment{RPGStatBlockDetails}{}
-{
+{%
 	\RPGStatBlockLine{}
 	\begin{RPGStatBlockAttributes}
-}
-{
+}%
+{%
 	\end{RPGStatBlockAttributes}
 	\RPGStatBlockLine{}
-}
+}%
 
 % Arguments in order are the stats for: strength, dexterity, constitution,
 % intelligence, wisdom and charisma
 \NewDocumentCommand{\RPGStatBlockAbilityScores}{ m m m m m m }
-{
+{%
 	\color{titletext}
 	\par \vspace{1pt} \noindent
     \begin{tabularx}{\linewidth}{YYYYYY}
@@ -99,28 +99,28 @@
 		{#6}
 	\end{tabularx}
 	\par \vspace{4pt}
-}
+}%
 
 % Create a new action in the stat block
 \NewDocumentCommand{\RPGStatBlockAction}{ m }
-{
+{%
 	\color{black}
 	\RPGFontStatBlockBody
 	\par\smallskip\noindent
 	\textsl{\textbf{#1.}}
-}
+}%
 
 % Create a subaction in a stat block
 \NewDocumentCommand{\RPGStatBlockSubAction}{ m }
-{
+{%
 	\color{black}
 	\par
 	\textsl{\textbf{#1.}}
-}
+}%
 
 % Create a new section in a stat block, like actions and legendary actions
 \NewDocumentCommand{\RPGStatBlockSection}{ m }
-{
+{%
 	\addvspace{6pt plus 2pt minus 2pt} \noindent
 	\RPGFontStatBlockSection{#1}
 	\vspace {2pt}
@@ -129,7 +129,7 @@
     \noindent \ignorespaces
 	\color{black}
 	\RPGFontStatBlockBody
-}
+}%
 
 % Create a new description list for spells in a stat block
 \newlist{RPGStatBlockSpell}{description}{1}
@@ -148,14 +148,14 @@
 % Create a new description list for legendary actions in a stat block
 \newlist{RPGMonsterLegendaryActions}{description}{1}
 \setlist[RPGMonsterLegendaryActions]
-{
+{%
 	font = \RPGFontStatBlockBody,
 	noitemsep,
 	topsep = 6pt plus 2pt minus 2pt,
-}
+}%
 
 % Create a new legendary action
 \NewDocumentCommand{\RPGMonsterLegendaryAction}{ m m }
-{
+{%
 	\item[#1.]{#2}
-}
+}%

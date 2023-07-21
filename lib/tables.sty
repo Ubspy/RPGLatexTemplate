@@ -3,7 +3,7 @@
 	{ > { \centering \arraybackslash } X }
 
 \NewDocumentEnvironment{RPGTable}{ o m }
-{
+{%
     % New paragraph with funny spacing, but don't indent
     \par \vspace { 9pt plus 3pt minus 3pt } \noindent
 
@@ -26,8 +26,8 @@
     % compile using \begin{tabularx} apparently that doesn't work
     % 0.96 of linewidth to avoid full hbox
     \tabularx{0.96\linewidth}{#2}
-}
-{
+}%
+{%
     \endtabularx
     \vspace { 12pt plus 4pt minus 4pt }
-}
+}%

@@ -23,46 +23,46 @@
 % Section Fonts %
 % ------------- %
 \NewDocumentCommand{\RPGFontPart}{}
-{
+{%
 	\color{titletext}
 	\Huge\fontfamily{MrEavesSCRemake-TLF}\normalfont\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontChapter}{}
-{
+{%
 	\color{titletext}
 	\Huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontSection}{}
-{
+{%
 	\color{titletext}
 	\huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontSubsection}{}
-{
+{%
 	\color{titletext}
 	\Large\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontSubsubsection}{}
-{
+{%
 	\color{titletext}
 	\large\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontParagraph}{}
-{
+{%
 	\color{black}
 	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontSubparagraph}{}
-{
+{%
 	\color{black}
 	\small\fontfamily{BookInsanity-TLF}\selectfont
-}
+}%
 
 % --------- %
 % Drop Caps %
@@ -72,7 +72,7 @@
 
 % Add drop cap command
 \NewDocumentCommand{\RPGDropCap}{m}
-{
+{%
 	\RPGFontParagraph
 	\lettrine[
 		lines = 4,
@@ -81,98 +81,98 @@
 		nindent = 0pt,
 	]
 	{#1}{\normalfont{}}
-}
+}%
 
 % ----------- %
 % Footer Font %
 % ----------- %
 \NewDocumentCommand{\RPGFontFooter}{}
-{
+{%
 	\color{footer}
 	\scriptsize\fontfamily{BookInsanity-TLF}\selectfont
-}
+}%
 
 % --------------- %
 % Color Box Fonts %
 % --------------- %
 \NewDocumentCommand{\RPGFontBoxTitle}{}
-{
+{%
 	\color{black}
 	% Set the font default to be normal bold
-	\small\fontfamily{ScalySansRemake-TLF}\bfseries\selectfont
-}
+	\footnotesize\fontfamily{ScalySansRemake-TLF}\bfseries\selectfont
+}%
 
 \NewDocumentCommand{\RPGFontBoxBody}{}
-{
+{%
 	\color{black}
-	\footnotesize\fontfamily{ScalySansRemake-TLF}\selectfont
-}
+	\scriptsize\fontfamily{ScalySansRemake-TLF}\selectfont
+}%
 
 % ----------- %
 % Table Fonts %
 % ----------- %
 \NewDocumentCommand{\RPGFontTableTitle}{}
-{
+{%
 	\color{black}
 	\large\fontfamily{ScalySans-TLF}\scshape\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontTableBody}{}
-{
+{%
 	\color{black}
 	\footnotesize\fontfamily{ScalySansRemake-TLF}\normalfont\selectfont
-}
+}%
 
 % ---------------- %
 % Stat Block Fonts %
 % ---------------- %
 \NewDocumentCommand{\RPGFontStatBlockTitle}{}
-{
+{%
 	\color{titletext}
 	\huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontStatBlockSection}{}
-{
+{%
 	\color{titletext}
 	\large\fontfamily{ScalySans-TLF}\scshape\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontStatBlockBody}{}
-{
+{%
 	\color{black}
 	\small\fontfamily{ScalySansRemake-TLF}\upshape\selectfont
-}
+}%
 
 % ---------------- %
 % Table of Content %
 % ---------------- %
 \NewDocumentCommand{\RPGFontToCTitle}{}
-{
+{%
 	\color{titletext}
 	\HUGE\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontToCPart}{}
-{
+{%
 	\color{titletext}
 	\huge\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontToCChapter}{}
-{
+{%
 	\color{titletext}
 	\LARGE\fontfamily{MrEavesSCRemake-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontToCSection}{}
-{
+{%
 	\color{black}
 	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
-}
+}%
 
 \NewDocumentCommand{\RPGFontToCSubSection}{}
-{
+{%
 	\color{black}
 	\normalsize\fontfamily{BookInsanity-TLF}\selectfont
-}
+}%
