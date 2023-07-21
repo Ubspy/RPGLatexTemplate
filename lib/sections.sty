@@ -209,3 +209,9 @@
 	\refstepcounter{RPGSubAreaCounter}
 	\subsubsection{\theRPGAreaCounter \theRPGSubAreaCounter . ~ #1}
 }%
+
+% Set hyperref styling for referencing characters, areas and sections
+\NewDocumentCommand{\RPGRef}{ o m }
+{%
+	\hyperref[#1]{\color{reftext}\textbf{\underline{#2}}\color{black}}
+}%
