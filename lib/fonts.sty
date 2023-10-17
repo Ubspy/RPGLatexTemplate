@@ -12,6 +12,7 @@
 \pdfmapfile{BookInsanity.map} % BookInsanity-TLF
 \pdfmapfile{ScalySansRemake.map} % ScalySansRemake-TLF
 \pdfmapfile{ScalySans.map} % ScalySans-TLF, this is the small caps version
+\pdfmapfile{PathfinderTwoeActions.map}
 
 % Set the default font
 \renewcommand{\familydefault}{BookInsanity-TLF}
@@ -62,6 +63,12 @@
 {%
 	\color{black}
 	\small\fontfamily{BookInsanity-TLF}\selectfont
+}%
+
+\NewDocumentCommand{\RPGPathfinderFont}{}
+{%
+	\color{black}
+	\large\fontfamily{PathfinderTwoeActions-TLF}\selectfont
 }%
 
 % --------- %

@@ -6,7 +6,10 @@
 % Based off relative size, if there's 3 S columns, their arguments
 % should add up to 1
 \newcolumntype{S}[1]
-    { > { p{0.96 * #1 * \linewidth} } }
+    {%
+        \ColWidth=\dimxpr \linewidth * 0.96 * #1 \relax
+        p{ \ColWidth }
+    }%
 
 \NewDocumentEnvironment{RPGTable}{ o m }
 {%
