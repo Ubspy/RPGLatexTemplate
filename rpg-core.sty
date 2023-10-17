@@ -1,9 +1,7 @@
 \PassOptionsToPackage{table}{xcolor}
 \PassOptionsToPackage{toc}{multitoc}
 
-% Add links to parts of the pdf
-% This one needs to be first because it's weird
-\RequirePackage{hyperref}
+\RequirePackage{xintexpr}
 
 % Helps with tables somehow idk
 \RequirePackage{array}
@@ -30,7 +28,7 @@
 \RequirePackage{graphicx}
 
 % Make it so we can have more variation on headers and footers
-\RequirePackage {fancyhdr}
+\RequirePackage{fancyhdr}
 
 % Load the font encoder package, required to render custom fonts
 \RequirePackage[T1]{fontenc}
@@ -72,6 +70,9 @@
 
 % Package for defining all the colors
 \RequirePackage{xcolor}
+
+% Add links to parts of the pdf
+\RequirePackage{hyperref}
 
 % Import base packages first
 \RequirePackage{lib/colors}
