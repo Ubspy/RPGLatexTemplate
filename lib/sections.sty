@@ -215,3 +215,17 @@
 {%
 	\hyperref[#1]{\color{reftext}\textbf{\underline{#2}}\color{black}}
 }%
+
+% Create a new description list for listing outcomes of a skill check
+\newlist{RPGDCOutcomes}{description}{1}
+\setlist[RPGDCOutcomes]
+{
+	before = \color{black}\small,
+	font = \RPGFontStatBlockBody,
+	nosep,
+	labelindent = 15pt,
+	labelwidth = 0pt,
+	labelsep* = 0pt,
+	leftmargin = !,
+	style = standard
+}

@@ -56,14 +56,15 @@
 \newlist{RPGStatBlockAttributes}{description}{1}
 \setlist[RPGStatBlockAttributes]
 {
-	before = \color{titletext},
-	font = \RPGFontStatBlockBody,
-	nosep,
-	labelindent = 0pt,
-	labelwidth = 0pt,
-	labelsep* = 0pt,
-	leftmargin = !,
-	style = standard
+	before = \color{titletext},		% Sets color of text before defining font
+	font = \RPGFontStatBlockBody,	% Define font	
+	nosep,							% No separation between items of the list,
+									% keeps them from being very spaced out
+	labelindent = 0pt,				% Sets the indent of each item
+	labelwidth = 0pt,				% Unsute tbh
+	labelsep* = 0pt,				% From what I can tell same as indent
+	leftmargin = !,					% Also unsure
+	style = standard				% Sets the style of the list to just act normally
 }
 
 % Create a section for details in a stat block

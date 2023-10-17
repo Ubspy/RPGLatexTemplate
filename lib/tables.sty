@@ -2,6 +2,12 @@
 \newcolumntype{Y}
 	{ > { \centering \arraybackslash } X }
 
+% Create a new column type that allows you to set column width
+% Based off relative size, if there's 3 S columns, their arguments
+% should add up to 1
+\newcolumntype{S}[1]
+    { > { p{0.96 * #1 * \linewidth} } }
+
 \NewDocumentEnvironment{RPGTable}{ o m }
 {%
     % New paragraph with funny spacing, but don't indent
