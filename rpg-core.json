@@ -1,0 +1,92 @@
+{
+  "includes": {},
+  "cmds": {
+    "RPGFontPart": {},
+    "RPGFontChapter": {},
+    "RPGFontSection": {},
+    "RPGFontSubsection": {},
+    "RPGFontSubsubsection": {},
+    "RPGFontParagraph": {},
+    "RPGFontSubparagraph": {},
+    "RPGPathfinderFont": {},
+    "RPGDropCap{}": {
+      "snippet": "RPGDropCap{${1:short title}}"
+    },
+    "RPGFontFooter": {},
+    "RPGFontBoxTitle": {},
+    "RPGFontBoxBody": {},
+    "RPGFontTableTitle": {},
+    "RPGFontTableBody": {},
+    "RPGFontStatBlockTitle": {},
+    "RPGFontStatBlockSection": {},
+    "RPGFontStatBlockBody": {},
+    "RPGFontToCTitle": {},
+    "RPGFontToCPart": {},
+    "RPGFontToCChapter": {},
+    "RPGFontToCSection": {},
+    "RPGFontToCSubSection": {},
+    "PFOneAction": {},
+    "PFTwoActions": {},
+    "PFThreeActions": {},
+    "PFFreeAction": {},
+    "PFReaction": {},
+    "RPGFeatHeader{}[]": {
+      "snippet": "RPGFeatHeader{${1:short title}}[${2:text}]"
+    },
+    "RPGItemHeader{}{}": {
+      "snippet": "RPGItemHeader{${1:short title}}{${2:text}}"
+    },
+    "RPGSpellHeader{}{}{}{}{}{}": {
+      "snippet": "RPGSpellHeader{${1:short title}}{${2:text}}{${3:text}}{${4:text}}{${5:text}}{${6:text}}"
+    },
+    "RPGResetAreas": {},
+    "RPGArea{}": {
+      "snippet": "RPGArea{${1:title}}"
+    },
+    "RPGSubArea{}": {
+      "snippet": "RPGSubArea{${1:title}}"
+    },
+    "RPGRef[]{}": {
+      "snippet": "RPGRef[${2:label}]{${1:test}}"
+    },
+    "RPGStatBlockType{}": {
+      "snippet": "RPGStatBlockType{${1:text}}"
+    },
+    "RPGStatBlockLine": {},
+    "RPGStatBlockAbilityScores{}{}{}{}{}{}": {
+      "snippet": "RPGStatBlockAbilityScores{${1:text}}{${2:text}}{${3:text}}{${4:text}}{${5:text}}{${6:text}}"
+    },
+    "RPGStatBlockAction{}": {
+      "snippet": "RPGStatBlockAction{${1:short title}}"
+    },
+    "RPGStatBlockSubAction{}": {
+      "snippet": "RPGStatBlockSubAction{${1:short title}}"
+    },
+    "RPGStatBlockSection{}": {
+      "snippet": "RPGStatBlockSection{${1:short title}}"
+    }
+  },
+  "envs": {
+    "RPGComment[]": {
+      "name": "RPGComment",
+      "snippet": "[${1:title}]"
+    },
+    "RPGReadAloud": {},
+    "RPGDCOutcomes{}": {
+      "name": "RPGDCOutcomes",
+      "snippet": "{${1:cols}}"
+    },
+    "RPGStatBlock[]{}": {
+      "name": "RPGStatBlock",
+      "snippet": "[${2:width}]{${1:title}}"
+    },
+    "RPGStatBlockAttributes": {},
+    "RPGStatBlockDetails": {},
+    "RPGTable[]{}": {
+      "name": "RPGTable",
+      "snippet": "[${2:title}]{${1:cols}}"
+    }
+  },
+  "options": [],
+  "keyvals": []
+}
